@@ -1,7 +1,24 @@
-# Getting Started with Create React App
+# React Interview test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the [Dog API](https://dog.ceo/dog-api/documentation/).
 
+This project uses React, React Router, Redux, Axios, and Styled Components.
+
+The Home Page (The Breeds Page) is already implemented. The individual breed page and sub breed pages have not been implemented.
+
+The dog service api file has all the api calls needed.
+
+# Requirements
+
+* Implement search functionality on all breeds page
+* Implement search functionality on individual breeds page if and only if the breed has sub breeds
+* Show all breed images on individual breed pages
+* Show all sub breed images on individual sub breed pages
+* Use Redux to store all images
+
+# During Interview
+
+Be able to explain how the entire project functions
 ## Available Scripts
 
 In the project directory, you can run:
@@ -13,11 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
