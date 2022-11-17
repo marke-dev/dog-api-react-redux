@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Dog from "../components/Dog";
 import MainLayout from "../components/MainLayout";
@@ -12,8 +12,16 @@ const BreedsContainer = ({ breeds }) => {
     setSearchInput(e.target.value);
   };
 
+  useEffect(() => {
+    if (searchInput.length > 0) {
+      
+    }
+    else {
+      setFilteredBreeds(breeds)
+    }
+  }, [breeds, searchInput]);
   return (
-    <MainLayout className="noselect">
+    <MainLayout>
       <h1>All Breeds</h1>
       <input
         type="text"
