@@ -1,9 +1,15 @@
+/*
+* Dog component is used to display the dog breed images and breed name
+* used in: DogSearch.js
+* props: breed, breedImages
+*/
+
 import React, { useMemo } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -23,6 +29,9 @@ const Container = styled.div`
   }
 `;
 const Dog = ({ breed, breedImages }) => {
+  const params = useParams();
+  const id = useMemo(() => params.id, [params]);
+  const nextRoute = id ? `/breed/${id}/sub-breed/${breed}`: `breed/${breed}` ;
   const image = useMemo(() => {
     if (!breedImages[breed]) {
       return null;
@@ -31,7 +40,7 @@ const Dog = ({ breed, breedImages }) => {
   }, [breed, breedImages]);
   return (
     <Container className="noselect">
-      <Link to={`/breed/${breed}`}>
+      <Link to={nextRoute}>
         {image && <Image src={image} alt={breed} />}
         <Description>{breed.toUpperCase()}</Description>
       </Link>
